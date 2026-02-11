@@ -11,6 +11,18 @@ class Gradebook {
             while(scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 System.out.println(line);
+                try {
+                    String[] str_grades = line.split(" ");
+                    double divisor = 3.0d;
+                    double sum = 0.0d;
+                    for (int i=1;i<str_grades.length;i++) {
+                        sum += Double.parseDouble(str_grades[i]);
+                    }
+                    double result = sum / divisor;
+                    System.out.println("Average: " + result);
+                } catch (NumberFormatException e) {
+                    System.out.println("Non-number in " + file_input + ", please sanitize data");
+                }
             }
         } catch (FileNotFoundException e) {
             System.out.println("file not found");
