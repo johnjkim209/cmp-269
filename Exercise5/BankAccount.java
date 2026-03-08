@@ -1,7 +1,7 @@
 public class BankAccount {
     private int balance = 1000;
 
-    public void withdraw(int amount) {
+    public synchronized void withdraw(int amount) {
         if(balance > amount) {
             System.out.println("Sufficient funds.");
             balance -= amount;
@@ -21,9 +21,20 @@ public class BankAccount {
         Thread wife = new Thread(() -> {
             account.withdraw(700);
         });
-        husband.start();
-        wife.start();
-        account.display();
+        try {
+            husband.start();
+            wife.start();
+            husband.join();
+            wife.join();
+            account.display();
+
+        } catch (InterruptedException e) {
+            System.out.println("Thread was interrupted. ");
+            System.out.println(e.getMessage());
+            Thread.currentThread().interrupt();
+        }
+
+        
     }
 
 }
