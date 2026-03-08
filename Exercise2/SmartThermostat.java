@@ -8,19 +8,22 @@ public class SmartThermostat extends SmartDevice implements Adjustable {
 
     @Override
     public void turnOn() {
-        // TODO Auto-generated method stub
-        
+        System.out.println("HVAC System Starting...");
+        super.turnOn();
     }
 
     @Override
-    public void turnOff() {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public void setLevel(int leve) {
-        // TODO Auto-generated method stub
+    public void setLevel(int level) {
+        if (!isOn) {
+            System.out.println("Cannot adjust: Device is OFF.");
+            } else {
+                if (level >= 60 && level <= 80) {
+                    System.out.println("Adjusting temperature to " + Integer.toString(level));
+                    temperature = level;
+                } else {
+                    System.out.println("Cannot adjust: level out of bounds (60-80).");
+                }
+        }
         
     }
 
