@@ -1,3 +1,9 @@
+/*
+VSCODE TERMINAL RUN COMMANDS
+javac --module-path "C:\Users\BVC\Downloads\openjfx-11_windows-x64_bin-sdk\javafx-sdk-11\lib" --add-modules javafx.controls RegistrationApp.java
+java --module-path "C:\Users\BVC\Downloads\openjfx-11_windows-x64_bin-sdk\javafx-sdk-11\lib" --add-modules javafx.controls RegistrationApp
+*/
+
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
