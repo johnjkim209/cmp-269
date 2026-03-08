@@ -23,5 +23,6 @@ public class SmartLight extends SmartDevice implements Adjustable {
     @Override
     void performSelfDiagnostic() {
         System.out.println("Checking LED Health...");
+        System.out.println("Brightness is set to " + Integer.toString(brightness));
     }
 }

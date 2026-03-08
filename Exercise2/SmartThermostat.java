@@ -29,7 +29,7 @@ public class SmartThermostat extends SmartDevice implements Adjustable {
 
     @Override
     void performSelfDiagnostic() {
-        // TODO Auto-generated method stub
-        
+        System.out.println("Checking thermostat health...");
+        System.out.println("Thermostat is set to " + Integer.toString(temperature));
     }
 }
