@@ -1,9 +1,9 @@
 fun main() {
-    println("hi world");
+    println("hi world")
 
-    var studentName: String = "John Kim";
-    var middleName: String? = null;
+    var studentName: String = "John"
+    var middleName: String? = null
 
-    println("Welcome, $studentName $middleName!")
+    println("Welcome, $studentName ${middleName ?: "No Middle Name"}!")
 
 }
